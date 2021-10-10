@@ -1,0 +1,2780 @@
+body
+  padding: 0
+  margin: 0
+  background: #131622
+
+.app
+  font-family: "Montserrat", sans-serif
+  overflow: hidden
+  min-height: 100vh
+  height: auto
+  flex-direction: column
+
+.app, .main
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+
+.image-zoom
+  &.active
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    max-width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    padding: 20px
+    box-sizing: border-box
+    z-index: 100
+    max-height: 100%
+    @media screen and (min-width: 1024px)
+      padding: 80px 160px
+
+    &:after
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(0, 0, 0, 0.9)
+      content: ''
+      display: block
+
+    & picture
+      height: 100%
+      position: relative
+      z-index: 1
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+
+      & img
+        width: auto
+        max-width: 95%
+        max-height: 95vh
+        object-fit: contain
+        @media screen and (min-width: 1024px)
+          max-width: 80%
+          max-height: 80vh
+
+.wrap
+  padding-left: 20px
+  padding-right: 20px
+  box-sizing: border-box
+  @media screen and (min-width: 1024px)
+    width: 848px
+    margin: 0 auto
+  @media screen and (min-width: 1280px)
+    width: 1000px
+  @media screen and (min-width: 1440px)
+    width: 1280px
+
+
+// HEADER COMPONENT STYLES
+.header
+  padding: 20px 0
+  box-sizing: border-box
+  position: relative
+  z-index: 2
+  @media screen and (min-width: 1440px)
+    padding: 40px 0
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+
+  &__logo
+    display: block
+    text-decoration: none
+
+    &-name
+      font-weight: 600
+      color: #fff
+      width: 100%
+
+    &-description
+      font-size: 8px
+      color: #fff
+      opacity: .5
+      width: 100%
+      @media screen and (min-width: 768px)
+        font-size: 10px
+
+  &__menu
+    display: none
+    @media screen and (min-width: 768px)
+      display: block
+      margin-left: 40px
+      @media screen and (min-width: 1280px)
+        margin-left: 80px
+      @media screen and (min-width: 1440px)
+        margin-left: 120px
+      &-list
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+        align-items: baseline
+      &-item
+        &:not(:last-child)
+          margin-right: 16px
+          @media screen and (min-width: 1024px)
+            margin-right: 40px
+      &-link
+        font-size: 12px
+        color: #ffffff
+        text-decoration: none
+
+    &-list
+      padding: 0
+      margin: 0
+      list-style: none
+
+  &__actions
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin-left: auto
+
+    & div
+      margin-left: 8px
+
+  &__user
+    margin-bottom: -4px
+
+    &-action
+      display: none
+      @media screen and (min-width: 768px)
+        display: flex
+        flex-wrap: wrap
+        padding: 4px
+        align-items: center
+
+    &-link
+      text-decoration: none
+
+    &-icon
+      margin: 0 0 -4px
+
+      & picture
+        display: block
+        position: relative
+
+        & span
+          position: absolute
+          padding: 4px
+          width: 12px
+          height: 12px
+          border-radius: 50%
+          font-size: 10px
+          text-align: center
+          align-items: center
+          display: inline-flex
+          background: #ffffff
+          justify-content: center
+          top: -8px
+          right: -8px
+
+    &-login
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      @media screen and (min-width: 768px)
+        padding-left: 16px
+
+    &-info
+      font-size: 12px
+      color: #ffffff
+      padding-left: 16px
+      display: none
+      @media screen and (min-width: 1280px)
+        display: block
+
+    &-logout
+      display: inline-flex
+      border: 0
+      background: #292b42
+      color: #ffffff
+      padding: 12px 24px
+      opacity: 0.65
+      margin-left: 24px
+      border-radius: 4px
+      outline: none
+      cursor: pointer
+
+
+  &__toggle
+    @media screen and (min-width: 768px)
+      display: none
+
+    &-button
+      background: transparent
+      color: #fff
+      border: 1px solid #de186c
+      border-radius: 50px
+      padding: 12px 16px
+      font-size: 10px
+      margin-left: 16px
+      appearance: none
+      font-family: 'Montserrat', sans-serif
+      outline: none
+      box-sizing: border-box
+
+
+// FOOTER COMPONENT STYLES
+.footer
+  padding: 20px 0
+  box-sizing: border-box
+  position: relative
+  z-index: 1
+  @media screen and (min-width: 1440px)
+    padding: 40px 0
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+
+  &__copyright
+    width: 100%
+    margin-bottom: 24px
+    @media screen and (min-width: 768px)
+      width: auto
+      margin-right: 40px
+      margin-bottom: 0
+    @media screen and (min-width: 1280px)
+      margin-right: 120px
+
+    &-text
+      font-size: 12px
+      color: #ffffff
+
+  &__menu
+    &-list
+      display: flex
+      flex-wrap: wrap
+      margin: 0
+      padding: 0
+      list-style: none
+
+    &-item
+      margin-bottom: 8px
+      @media screen and (min-width: 768px)
+        margin-bottom: 0
+
+      &:not(:last-child)
+        margin-right: 16px
+        @media screen and (min-width: 1280px)
+          margin-right: 40px
+
+    &-link
+      font-size: 12px
+      color: #ffffff
+      opacity: 0.65
+
+
+// MAIN COMPONENT STYLES
+.main
+  padding-top: 40px
+  padding-bottom: 40px
+  box-sizing: border-box
+  @media screen and (min-width: 768px)
+    min-height: calc(100vh - 72px - 59px)
+    display: flex
+    flex-wrap: wrap
+  @media screen and (min-width: 1024px)
+    min-height: calc(100vh - 72px - 59px - 20px)
+  @media screen and (min-width: 1440px)
+    min-height: calc(100vh - 72px - 59px - 100px)
+
+  &:before
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    display: block
+    background: url("../assets/images/main.jpg") center no-repeat
+    background-size: cover
+    position: absolute
+
+  &__wrap
+    position: relative
+    z-index: 1
+    @media screen and (min-width: 768px)
+      padding-left: 80px
+      padding-right: 80px
+      min-height: calc(100vh - 72px - 59px - 100px)
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-end
+    @media screen and (min-width: 1024px)
+      min-height: calc(100vh - 72px - 59px - 100px)
+    @media screen and (min-width: 1440px)
+      min-height: calc(100vh - 72px - 59px - 180px)
+
+  &__content
+    @media screen and (min-width: 768px)
+      padding-bottom: 80px
+    @media screen and (min-width: 1024px)
+      padding-bottom: 120px
+      max-width: 800px
+
+  &__title
+    font-size: 28px
+    color: #ffffff
+    margin-bottom: 12px
+    @media screen and (min-width: 1024px)
+      font-size: 36px
+    @media screen and (min-width: 1280px)
+      font-size: 44px
+      margin-bottom: 20px
+    @media screen and (min-width: 1440px)
+      font-size: 52px
+
+  &__text
+    font-size: 14px
+    color: #ffffff
+    opacity: 0.65
+    line-height: 1.75
+    @media screen and (min-width: 1024px)
+      font-size: 16px
+
+  &__actions
+    margin-top: 40px
+    @media screen and (min-width: 768px)
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+
+  &__action
+    &:not(:last-child)
+      margin-bottom: 24px
+      @media screen and (min-width: 768px)
+        margin-bottom: 0
+        margin-right: 40px
+
+    &-button
+      border: 2px solid #de186c
+      background: #de186c
+      color: #ffffff
+      font-size: 14px
+      font-weight: 500
+      text-decoration: none
+      padding: 12px 24px
+      display: inline-flex
+      flex-wrap: wrap
+      width: auto
+      border-radius: 50px
+      box-sizing: border-box
+      @media screen and (min-width: 1024px)
+        font-size: 16px
+        padding: 16px 40px
+
+      &--transparent
+        background: transparent
+        border: 2px solid #ffffff
+
+
+// USERS PAGE STYLES
+.users
+  @media screen and (min-width: 768px)
+    min-height: 500px
+    height: calc(100vh - 72px - 59px)
+  @media screen and (min-width: 1024px)
+    height: calc(100vh - 72px - 59px - 20px)
+  @media screen and (min-width: 1440px)
+    height: calc(100vh - 72px - 59px - 100px)
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: flex-end
+    @media screen and (min-width: 768px)
+      min-height: 500px
+      height: calc(100vh - 72px - 59px)
+    @media screen and (min-width: 1024px)
+      height: calc(100vh - 72px - 59px - 100px)
+    @media screen and (min-width: 1440px)
+      height: calc(100vh - 72px - 59px - 180px)
+
+  &__col
+    width: calc(100% + 80px)
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-end
+    align-content: flex-end
+    padding: 120px 40px 40px
+    box-sizing: border-box
+    margin-left: -40px
+    margin-right: -40px
+    position: relative
+    @media screen and (min-width: 425px)
+      padding-left: 40px
+      padding-right: 40px
+    @media screen and (min-width: 768px)
+
+      height: 40vh
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-end
+      align-content: flex-end
+      margin-left: -20px
+      margin-right: -20px
+      width: 50%
+      padding-left: 80px
+      padding-bottom: 80px
+      box-sizing: border-box
+      position: static
+
+    &--man:before
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      content: ''
+      display: block
+      background: url("../assets/images/man.jpg") center top no-repeat
+      background-size: cover
+      @media screen and (min-width: 768px)
+        position: absolute
+        top: 0
+        left: 0
+        right: 50%
+        bottom: 0
+        width: 50%
+        content: ''
+        display: block
+        background: url("../assets/images/man.jpg") center top no-repeat
+        background-size: cover
+
+    &--woman:before
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      content: ''
+      display: block
+      background: url("../assets/images/woman.jpg") center top no-repeat
+      background-size: cover
+      @media screen and (min-width: 768px)
+        position: absolute
+        top: 0
+        left: 50%
+        right: 0
+        bottom: 0
+        width: 50%
+        content: ''
+        display: block
+        background: url("../assets/images/woman.jpg") center top no-repeat
+        background-size: cover
+
+    &-content
+      position: relative
+      z-index: 1
+
+    &-title
+      color: #ffffff
+      width: 100%
+      margin-bottom: 8px
+      font-size: 28px
+      @media screen and (min-width: 768px)
+        font-size: 32px
+      @media screen and (min-width: 1024px)
+        font-size: 36px
+      @media screen and (min-width: 1280px)
+        font-size: 40px
+
+    &-text
+      color: #ffffff
+      font-size: 14px
+      opacity: 0.65
+      width: 100%
+
+    &-actions
+      width: 100%
+      margin-top: 24px
+
+    &-action
+      border: 2px solid #de186c
+      background: #de186c
+      color: #ffffff
+      font-size: 14px
+      font-weight: 500
+      text-decoration: none
+      padding: 12px 24px
+      display: inline-flex
+      flex-wrap: wrap
+      width: auto
+      border-radius: 50px
+      box-sizing: border-box
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin-left: -10px
+    margin-right: -10px
+    @media screen and (min-width: 1024px)
+      padding-left: 40px
+      padding-right: 40px
+      box-sizing: border-box
+    @media screen and (min-width: 1440px)
+      margin-left: -20px
+      margin-right: -20px
+      padding-left: 100px
+      padding-right: 100px
+
+  &__page
+    padding-bottom: 120px
+
+    &-info
+      margin-bottom: 60px
+      @media screen and (min-width: 768px)
+        margin-top: 20px
+      @media screen and (min-width: 1024px)
+        margin-top: 40px
+        padding-left: 40px
+        padding-right: 40px
+        box-sizing: border-box
+      @media screen and (min-width: 1440px)
+        padding-left: 100px
+        padding-right: 100px
+
+    &-title
+      color: #ffffff
+      font-size: 20px
+
+    &-text
+      font-size: 12px
+      opacity: 0.65
+      color: #ffffff
+
+  &__card
+    width: calc(50% - 20px)
+    margin: 0 10px 28px
+    position: relative
+    @media screen and (min-width: 568px)
+      width: calc(100% / 3 - 20px)
+    @media screen and (min-width: 980px)
+      width: calc(100% / 4 - 20px)
+      margin: 0 10px 36px
+    @media screen and (min-width: 1440px)
+      width: calc(100% / 4 - 40px)
+      margin: 0 20px 80px
+
+    &-online
+      position: absolute
+      top: 12px
+      right: 12px
+      content: ''
+      display: block
+      border-radius: 50%
+      background: #1ad900
+      width: 16px
+      height: 16px
+      z-index: 1
+
+    &-link
+      display: block
+      color: inherit
+      text-decoration: none
+
+    &-info
+      padding-left: 16px
+      padding-right: 16px
+      box-sizing: border-box
+
+    &-name
+      color: #ffffff
+      font-size: 14px
+      margin-top: 12px
+
+    &-city
+      font-size: 12px
+      opacity: 0.65
+      color: #ffffff
+      margin-top: 4px
+
+    &-figure
+      width: 100%
+      margin: 0
+
+      & picture
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        width: 100%
+        padding-top: 125%
+        background-color: #212430
+        position: relative
+        box-sizing: border-box
+        border-radius: 4px
+        overflow: hidden
+
+        & img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 1
+
+    &-status
+      display: inline-block
+      padding: 2px 4px
+      position: absolute
+      font-size: 12px
+      top: 4px
+      left: 4px
+      z-index: 1
+      border-radius: 2px
+      text-transform: uppercase
+
+      &.silver
+        background: #809295
+        color: #ffffff
+
+      &.gold
+        background: #e1980c
+        color: #ffffff
+
+      &.vip
+        background: #de186c
+        color: #ffffff
+
+
+  &__pagination
+    display: flex
+
+    &-item
+      padding: 8px 16px
+      display: inline-flex
+      border-radius: 50%
+      color: #ffffff
+      font-weight: 600
+      cursor: pointer
+      box-sizing: border-box
+      width: 40px
+      height: 40px
+      justify-content: center
+      align-items: center
+      margin-right: 4px
+      text-decoration: none
+
+      &.active
+        background: #de186c
+
+  &__filters
+    margin-bottom: 80px
+    box-sizing: border-box
+    max-width: 880px
+    @media screen and (min-width: 1024px)
+      padding-left: 40px
+    @media screen and (min-width: 1440px)
+      padding-left: 80px
+
+
+  &__filter
+    margin-bottom: 24px
+
+    &-title
+      font-size: 20px
+      font-weight: 600
+      color: #ffffff
+      padding-left: 24px
+      box-sizing: border-box
+
+    &-checks
+      margin-top: 20px
+
+    &-check
+      position: relative
+      display: inline-flex
+      margin-bottom: 16px
+
+      &:not(:last-child)
+        margin-right: 16px
+
+      & input
+        margin: 0
+        display: none
+
+        &:checked
+          & + label
+            opacity: 1
+
+        &:focus
+          border-bottom: 1px solid transparent
+
+    & label
+      opacity: 0.3
+      background: #ffffff
+      color: #131622
+      border-radius: 50px
+      padding: 8px 20px
+      font-size: 14px
+
+    &-actions
+      margin-top: 40px
+
+    &-submit
+      background: #de186c
+      padding: 12px 32px
+      color: #ffffff
+      font-size: 14px
+      border-radius: 50px
+      box-sizing: border-box
+      font-family: "Montserrat", sans-serif
+      border: 0
+      appearance: none
+      outline: none
+
+
+// FORM COMPONENT STYLES
+.form
+
+  &__comment
+    font-size: 14px
+    color: #ffffff
+    opacity: 0.65
+    line-height: 1.5
+    box-sizing: border-box
+    padding: 8px 16px
+
+  &__row
+    position: relative
+
+    &:not(:last-child)
+      margin-bottom: 40px
+
+    &-title
+      color: #ffffff
+      font-size: 16px
+      padding-left: 24px
+      padding-right: 24px
+      box-sizing: border-box
+
+
+    & label
+      color: #ffffff
+      font-size: 14px
+      display: block
+      width: 100%
+      margin-bottom: 8px
+      padding-left: 24px
+      padding-right: 24px
+      box-sizing: border-box
+
+    & input
+      font-family: Montserrat, sans-serif
+      background: rgba(255, 255, 255, 0.1)
+      padding: 16px 24px
+      border-radius: 50px
+      color: rgb(255, 255, 255)
+      border: 1px solid transparent
+      outline: none
+      display: block
+      width: 100%
+      letter-spacing: 0.5px
+      font-size: 12px
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.15)
+      transition: all 0.3s ease
+      appearance: none
+      box-sizing: border-box
+
+      &:focus
+        border-bottom: 1px solid rgb(222, 24, 108)
+        background: rgba(255, 255, 255, 0.2)
+
+    & span
+      position: absolute
+      bottom: -16px
+      left: 0
+      display: block
+      color: #ffe200
+      font-size: 12px
+      opacity: .7
+      padding-left: 16px
+
+    &-checks
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      @media screen and (min-width: 1024px)
+        justify-content: flex-start
+
+    &-check
+      position: relative
+
+      &:not(:last-child)
+        margin-right: 16px
+
+      & input
+        margin: 0
+        display: none
+
+        &:checked
+          & + label
+            opacity: 1
+
+        &:focus
+          border-bottom: 1px solid transparent
+
+      & label
+        opacity: 0.3
+        background: #ffffff
+        color: #131622
+        border-radius: 50px
+        padding: 12px 24px
+
+  &__actions
+    margin-top: 48px
+    @media screen and (min-width: 1024px)
+      display: flex
+      flex-wrap: wrap
+      justify-content: flex-start
+      align-items: flex-start
+
+  &__action
+    &:not(:last-child)
+      margin-bottom: 24px
+      @media screen and (min-width: 1024px)
+        margin-bottom: 0
+        margin-right: 40px
+
+  &__submit
+    font-family: 'Montserrat', sans-serif
+    border: 2px solid #de186c
+    background: #de186c
+    color: #ffffff
+    font-size: 14px
+    font-weight: 500
+    text-decoration: none
+    padding: 12px 24px
+    display: inline-flex
+    flex-wrap: wrap
+    width: auto
+    border-radius: 50px
+    box-sizing: border-box
+    outline: none
+    cursor: pointer
+
+  &__link
+    opacity: 0.65
+    display: inline-flex
+    padding: 12px 24px
+    color: #ffffff
+    border: 1px solid
+    font-size: 14px
+    text-decoration: none
+    border-radius: 50px
+
+  &__alt
+    margin-top: 20px
+    text-align: center
+    &-button
+      border: none
+      padding: 0
+      font-size: 14px
+      color: #ffffff
+      opacity: 0.65
+      appearance: none
+      background: transparent
+      text-decoration: underline
+      cursor: pointer
+      font-family: 'Montserrat', sans-serif
+
+//
+.login
+  padding-top: 40px
+  padding-bottom: 80px
+  text-align: center
+  @media screen and (min-width: 768px)
+    padding: 0
+    min-height: 500px
+    height: calc(100vh - 72px - 59px)
+  @media screen and (min-width: 1024px)
+    height: calc(100vh - 72px - 59px - 20px)
+    text-align: left
+  @media screen and (min-width: 1440px)
+    height: calc(100vh - 72px - 59px - 100px)
+
+  &:before
+    @media screen and (min-width: 1024px)
+      top: 0
+      left: 0
+      right: 50%
+      bottom: 0
+      background: url("../assets/images/login.jpg") left no-repeat
+      background-size: cover
+      position: absolute
+      display: block
+      content: ''
+
+  &--register
+    &:before
+      background: url("../assets/images/register.jpg") left no-repeat
+
+  &__wrap
+    max-width: 320px
+    margin: 0 auto
+    @media screen and (min-width: 768px)
+      min-height: 500px
+      height: calc(100vh - 72px - 59px)
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+    @media screen and (min-width: 1024px)
+      width: 50%
+      margin-left: 50%
+      height: calc(100vh - 72px - 59px - 10px)
+      padding-left: 80px
+      max-width: 100%
+    @media screen and (min-width: 1280px)
+      padding-left: 120px
+    @media screen and (min-width: 1440px)
+      height: calc(100vh - 72px - 59px - 180px)
+      padding-left: 160px
+
+    &:before
+      background: rgb(22, 23, 54)
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      content: ''
+      display: block
+      position: absolute
+      @media screen and (min-width: 1024px)
+        left: 50%
+
+  &__content
+    width: 100%
+    position: relative
+
+    &-title
+      color: #ffffff
+      font-size: 28px
+      margin-bottom: 40px
+
+  &__form
+    width: 100%
+    @media screen and (min-width: 1024px)
+      max-width: 420px
+
+
+// ALERT
+.alert
+  position: fixed
+  bottom: 0
+  right: 20px
+  left: 20px
+  z-index: 90
+
+  &__wrap
+    position: absolute
+    bottom: 20px
+    right: 0
+    left: 0
+    @media screen and (min-width: 768px)
+      right: 40px
+      left: auto
+      bottom: 40px
+
+  &__content
+    padding: 28px 36px
+    background: #ffffff
+    border-radius: 4px
+    font-size: 14px
+    cursor: pointer
+    max-width: 360px
+    width: 100%
+    box-sizing: border-box
+    @media screen and (min-width: 768px)
+      box-sizing: border-box
+
+// ACCOUNT STYLES
+.profile
+  padding-top: 40px
+  padding-bottom: 120px
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-items: flex-start
+
+  &__tabs
+    &-item
+      color: #fff
+      font-size: 14px
+      display: inline-block
+      width: 100%
+      padding: 4px 0
+      cursor: pointer
+      text-decoration: none
+
+      &:hover
+        color: #de186c
+
+      &:not(:last-child)
+        margin-bottom: 12px
+
+  &__messages
+    &-title
+      color: #ffffff
+      padding-left: 24px
+      font-weight: 600
+      font-size: 16px
+
+    &-actions
+      margin-top: 16px
+
+    &-action
+      background: #de186c
+      color: #ffffff
+      font-size: 14px
+      padding: 12px 24px
+      border-radius: 50px
+      text-decoration: none
+      display: inline-flex
+
+      &--transparent
+        margin-top: 16px
+        color: #ffffff
+        background: transparent
+        border: 1px solid #ffffff
+
+  &__logout
+    display: inline-flex
+    padding: 8px 24px
+    color: #ffffff
+    font-size: 14px
+    border: 1px solid #ffffff
+    border-radius: 50px
+    box-sizing: border-box
+    background: transparent
+    appearance: none
+    opacity: 0.65
+
+  &__aside
+    width: 100%
+    margin-bottom: 60px
+    @media screen and (min-width: 768px)
+      padding-top: 90px
+      width: 200px
+    @media screen and (min-width: 1280px)
+      padding-top: 114px
+      width: 320px
+    @media screen and (min-width: 1440px)
+      padding-top: 132px
+
+    &-block
+      background: #212430
+      width: 100%
+      padding: 32px
+      box-sizing: border-box
+      border-radius: 4px
+      margin-bottom: 20px
+      @media screen and (min-width: 768px)
+        margin-bottom: 60px
+
+  &__release
+    text-align: center
+
+    &-text
+      color: #ffffff
+      font-size: 14px
+
+    &-actions
+      margin-top: 24px
+
+    &-action
+      border-radius: 50px
+      background: #de186c
+      color: #ffffff
+      font-weight: 500
+      padding: 16px 24px
+      font-size: 14px
+      font-family: "Montserrat", sans-serif
+      appearance: none
+      cursor: pointer
+      outline: none
+      border: 1px solid #de186c
+
+      &--deactivate
+        background: transparent
+        opacity: 0.65
+        border-color: #ffffff
+
+  &__section
+    @media screen and (min-width: 768px)
+      width: calc(100% - 200px)
+      padding-left: 60px
+      box-sizing: border-box
+    @media screen and (min-width: 1280px)
+      width: calc(100% - 320px)
+      padding-left: 120px
+
+  &__plans
+    text-align: center
+
+    &-title
+      font-size: 14px
+      color: #ffffff
+      opacity: 0.65
+
+    &-name
+      font-size: 28px
+      text-transform: uppercase
+      font-weight: 700
+      color: #ffffff
+      margin-top: 12px
+
+.account
+  @media screen and (min-width: 1440px)
+    padding-right: 120px
+
+  &__title
+    color: #ffffff
+    font-size: 24px
+    text-align: center
+    margin-bottom: 40px
+    @media screen and (min-width: 768px)
+      text-align: left
+    @media screen and (min-width: 1280px)
+      font-size: 36px
+    @media screen and (min-width: 1440px)
+      font-size: 44px
+
+  &__section
+    margin-bottom: 80px
+    @media screen and (min-width: 768px)
+      padding-right: 40px
+      box-sizing: border-box
+
+    &-title
+      color: #ffffff
+      font-weight: 500
+      font-size: 16px
+      margin-bottom: 36px
+      padding-left: 16px
+      padding-right: 16px
+      box-sizing: border-box
+
+    &-label
+      color: #ffffff
+      font-size: 12px
+      display: block
+      width: 100%
+      padding-left: 16px
+      padding-bottom: 6px
+      opacity: .65
+      box-sizing: border-box
+      @media screen and (min-width: 768px)
+        padding-left: 24px
+
+    &-input
+      appearance: none
+      font-family: "Montserrat", sans-serif
+      background: #2b2d3a
+      padding: 12px 16px
+      color: #bdbdbd
+      display: inline-block
+      border-radius: 50px
+      outline: none
+      width: 100%
+      letter-spacing: .5px
+      font-size: 12px
+      box-sizing: border-box
+      border: 1px solid #2b2d3a
+      transition: 0.2s ease all
+
+      &--block
+        cursor: pointer
+        min-height: 44px
+        @media screen and (min-width: 768px)
+          min-height: 52px
+
+      &:focus
+        border-color: #de186c
+
+      &:disabled
+        opacity: 0.65
+        cursor: default
+
+      @media screen and (min-width: 768px)
+        padding: 16px 24px
+        font-size: 14px
+
+    &-select
+      appearance: none
+      font-family: "Montserrat", sans-serif
+      background: #2b2d3a
+      padding: 12px 16px
+      color: #bdbdbd
+      display: inline-block
+      border-radius: 50px
+      outline: none
+      width: 100%
+      letter-spacing: .5px
+      font-size: 12px
+      box-sizing: border-box
+      border: 1px solid #2b2d3a
+      transition: 0.2s ease all
+      @media screen and (min-width: 768px)
+        padding: 16px 24px
+        font-size: 14px
+
+    &-textarea
+      appearance: none
+      font-family: "Montserrat", sans-serif
+      resize: vertical
+      background: rgba(255, 255, 255, 0.1)
+      padding: 12px 16px
+      color: #bdbdbd
+      display: inline-block
+      border-radius: 16px
+      outline: none
+      width: 100%
+      letter-spacing: .5px
+      font-size: 12px
+      min-height: 160px
+      max-height: 380px
+      border: 1px solid transparent
+      box-sizing: border-box
+      @media screen and (min-width: 768px)
+        padding: 16px 24px
+        font-size: 14px
+
+    &-row
+      @media screen and (min-width: 768px)
+        display: flex
+        margin-left: -10px
+        margin-right: -10px
+
+      &:not(:last-child)
+        margin-bottom: 24px
+
+    &-col
+      @media screen and (min-width: 768px)
+        margin-left: 10px
+        margin-right: 10px
+        width: calc(50% - 20px)
+
+      &:not(:last-child)
+        margin-bottom: 24px
+
+      &--fullwidth
+        width: 100%
+
+  &__save
+    background: #de186c
+    padding: 16px 40px
+    display: inline-flex
+    border: 0
+    color: #ffffff
+    font-weight: 500
+    font-family: "Montserrat", sans-serif
+    font-size: 16px
+    border-radius: 50px
+
+  &__images
+    max-width: 280px
+    margin: 0 auto 80px
+    @media screen and (min-width: 768px)
+      margin-left: 0
+
+    &-label
+      background: #de186c
+      padding: 16px 24px
+      color: #ffffff
+      font-weight: 500
+      font-size: 14px
+      display: flex
+      border-radius: 50px
+      width: 100%
+      justify-content: center
+      @media screen and (min-width: 768px)
+        width: auto
+
+      &--change
+        background: #ffffff
+        color: #212430
+
+    &-input
+      display: none
+
+    &-action
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      margin-top: 24px
+      @media screen and (min-width: 768px)
+        justify-content: flex-start
+
+  &__image
+    margin: 0
+
+    & img
+      width: 100%
+      overflow: hidden
+      border-radius: 8px
+
+  &__gallery
+    margin-bottom: 80px
+
+    &-list
+      margin-left: -10px
+      margin-right: -10px
+      display: flex
+      flex-wrap: wrap
+
+    &-item
+      width: calc(50% - 20px)
+      margin: 10px
+      @media screen and (min-width: 768px)
+        width: 120px
+
+    &-delete
+      position: absolute
+      bottom: 0
+      right: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 4px 8px
+      font-size: 12px
+      color: #ffffff
+      border: 0
+      appearance: none
+      font-family: 'Roboto', sans-serif
+      background: #de186c
+      z-index: 1
+      cursor: pointer
+
+    &-image
+      width: 100%
+      margin: 0
+      position: relative
+
+      & picture
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        width: 100%
+        padding-top: 125%
+        background-color: #212430
+        position: relative
+        box-sizing: border-box
+        border-radius: 4px
+        overflow: hidden
+
+        & img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 1
+
+      & img
+        width: 100%
+
+  &__goals
+    display: flex
+    flex-wrap: wrap
+
+  &__goal
+    &:not(:last-child)
+      margin-right: 12px
+      margin-bottom: 12px
+
+    &-input
+      margin: 0
+      display: none
+
+      &:checked
+        & + label
+          background: #ffffff
+          color: #212430
+          opacity: 1
+
+    &-label
+      display: inline-flex
+      padding: 12px 24px
+      border: 1px solid #ffffff
+      background: transparent
+      color: #ffffff
+      opacity: 0.3
+      border-radius: 50px
+      font-size: 14px
+
+  &__actions
+    margin-top: 60px
+
+// CANDIDATE STYLES
+.candidate
+  &__title
+    color: #ffffff
+    font-size: 24px
+    text-align: center
+    margin-bottom: 40px
+    @media screen and (min-width: 768px)
+      text-align: left
+    @media screen and (min-width: 1280px)
+      font-size: 36px
+    @media screen and (min-width: 1440px)
+      font-size: 44px
+
+  &__text
+    background: #212430
+    width: 100%
+    padding: 32px
+    box-sizing: border-box
+    border-radius: 4px
+    color: #bdbdbd
+    font-size: 14px
+    line-height: 2
+
+  &__actions
+    margin-top: 40px
+
+  &__action
+    background: #de186c
+    padding: 16px 40px
+    border-radius: 50px
+    color: #ffffff
+    font-weight: 500
+    display: inline-flex
+    border: 0
+    font-family: 'Montserrat', sans-serif
+    outline: none
+    cursor: pointer
+
+
+// TAB STYLES
+.tab
+  display: none
+
+  &.active
+    display: block
+
+
+// USER STYLES
+.user
+  padding: 20px
+  box-sizing: border-box
+  @media screen and (min-width: 425px)
+    padding-left: 40px
+    padding-right: 40px
+  @media screen and (min-width: 568px)
+    padding-left: 80px
+    padding-right: 80px
+  @media screen and (min-width: 768px)
+    padding-left: 160px
+    padding-right: 160px
+    padding-top: 60px
+  @media screen and (min-width: 1024px)
+    padding-left: 20px
+    padding-right: 20px
+
+  &__wrap
+    @media screen and (min-width: 1024px)
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: flex-start
+      padding-left: 80px
+      padding-right: 80px
+
+  &__image
+    margin-bottom: 40px
+    @media screen and (min-width: 1024px)
+      width: 30%
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+
+    &-figure
+      margin: 0
+      max-width: 280px
+      width: 100%
+
+      & picture
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+
+        & img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          overflow: hidden
+          border-radius: 8px
+
+  &__city
+    color: #ffffff
+    opacity: 0.65
+    font-size: 14px
+
+  &__nickname
+    font-size: 24px
+    font-weight: 600
+    margin-top: 4px
+    color: #ffffff
+
+  &__online
+    background: #ffd500
+    border-radius: 4px
+    padding: 4px 24px
+    color: #2b2d3a
+    box-sizing: border-box
+    font-size: 12px
+    display: inline-flex
+    margin-top: 8px
+    margin-bottom: 16px
+
+  &__actions
+    margin-top: 16px
+
+  &__action
+    background: #de186c
+    padding: 16px 24px
+    font-size: 16px
+    color: #ffffff
+    font-weight: 500
+    border-radius: 50px
+    border: 0
+    appearance: none
+    outline: none
+    display: flex
+    width: 100%
+    text-align: center
+    justify-content: center
+    font-family: "Montserrat", sans-serif
+    cursor: pointer
+    @media screen and (min-width: 1024px)
+      display: inline-flex
+      width: auto
+      padding: 16px 40px
+
+  &__content
+    padding-bottom: 120px
+    @media screen and (min-width: 1024px)
+      width: 70%
+      padding-left: 120px
+      box-sizing: border-box
+      padding-top: 60px
+
+  &__about
+    margin-top: 40px
+    padding: 24px
+    border-radius: 8px
+    background: #212430
+    margin-left: -20px
+    margin-right: -20px
+    @media screen and (min-width: 568px)
+      margin-left: -40px
+      margin-right: -40px
+      padding: 40px
+
+    &-title
+      font-size: 14px
+      font-weight: 500
+      color: #ffffff
+      margin-bottom: 12px
+
+  &__description
+    font-size: 14px
+    line-height: 1.5
+    color: #ffffff
+    opacity: 0.65
+
+  &__params
+    margin-top: 40px
+
+    &-title
+      color: #ffffff
+      font-weight: 600
+      font-size: 16px
+
+    &-block
+      &:not(:last-child)
+        margin-bottom: 40px
+
+  &__props
+    margin-top: 24px
+    @media screen and (min-width: 568px)
+      display: flex
+      flex-wrap: wrap
+      justify-content: flex-start
+      align-items: flex-start
+
+  &__prop
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    padding-left: 16px
+    position: relative
+    @media screen and (min-width: 568px)
+      width: 50%
+      padding-right: 24px
+      box-sizing: border-box
+
+    &:not(:last-child)
+      margin-bottom: 16px
+
+    &:before
+      position: absolute
+      top: 5px
+      left: 0
+      width: 8px
+      height: 8px
+      background: #de186c
+      border-radius: 50%
+      content: ''
+      display: block
+      z-index: 0
+
+    &-name
+      color: #ffffff
+      font-weight: 600
+      font-size: 14px
+      margin-right: 12px
+
+    &-value
+      color: #ffffff
+      font-weight: 600
+      font-size: 14px
+      opacity: 0.65
+
+  &__goals
+    display: flex
+    flex-wrap: wrap
+    margin-left: -4px
+    margin-right: -4px
+
+  &__goal
+    border: 1px solid #ffffff
+    background: #ffffff
+    color: #131622
+    padding: 8px 16px
+    border-radius: 50px
+    margin: 4px
+    font-size: 14px
+
+.message-popup
+  display: flex
+  flex-wrap: wrap
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 100
+  justify-content: center
+  align-items: center
+
+  &__overlay
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    background: rgba(0, 0, 0, 0.9)
+
+  &__wrap
+    position: relative
+    z-index: 1
+    background: #212430
+    padding: 40px
+    border-radius: 16px
+    width: 420px
+
+  &__content
+    margin-top: 24px
+
+    & label
+      font-size: 14px
+      color: #ffffff
+      width: 100%
+      display: block
+      opacity: 0.65
+      margin-bottom: 16px
+      padding-left: 24px
+      padding-right: 24px
+      box-sizing: border-box
+
+  &__title
+    font-size: 32px
+    font-weight: 600
+    color: #ffffff
+
+  &__textarea
+    background: transparent
+    border-radius: 4px
+    border: 1px solid #565a67
+    font-family: "Montserrat", sans-serif
+    line-height: 1.5
+    padding: 12px 24px
+    box-sizing: border-box
+    outline: none
+    color: #ffffff
+    font-size: 14px
+    width: 100%
+    display: block
+    min-height: 180px
+    resize: none
+
+  &__actions
+    margin-top: 40px
+
+  &__action
+    background: #de186c
+    display: inline-flex
+    padding: 16px 40px
+    color: #ffffff
+    border: 0
+    outline: none
+    appearance: none
+    border-radius: 50px
+    font-size: 14px
+    font-family: "Montserrat", sans-serif
+    box-sizing: border-box
+    cursor: pointer
+
+
+// SETTINGS STYLES
+.settings
+  @media screen and (min-width: 1440px)
+    padding-right: 120px
+
+// MESSAGES STYLES
+.messages-page
+  padding-top: 80px
+  padding-bottom: 120px
+  box-sizing: border-box
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    margin-left: -10px
+    margin-right: -10px
+    @media screen and (min-width: 1440px)
+      padding-left: 120px
+      padding-right: 120px
+
+
+.messages
+  width: 100%
+  background: #212430
+  margin: 0 10px
+  border-radius: 8px
+  @media screen and (min-width: 768px)
+    width: calc(60% - 20px)
+
+  &__wrap
+    &-header
+      padding: 20px
+      box-sizing: border-box
+      font-size: 14px
+      color: #ffffff
+      text-transform: uppercase
+      border-bottom: 2px solid #de186c
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    padding: 20px 20px 120px
+    box-sizing: border-box
+    overflow: scroll
+    height: 500px
+    align-items: flex-start
+    align-content: flex-start
+
+  &__item
+    margin-bottom: 20px
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    width: 100%
+
+    &:last-child
+      margin-bottom: auto
+
+    &--my
+      justify-content: flex-end
+
+      & .messages__item-author
+        text-align: right
+
+    &-author
+      color: #ffffff
+      font-size: 12px
+      opacity: 0.65
+      padding: 8px 20px
+      width: 100%
+      box-sizing: border-box
+
+    &-text
+      width: 80%
+      background: #f4f4f4
+      font-size: 14px
+      padding: 8px 20px
+      border-radius: 4px
+      line-height: 1.5
+
+    &-delete
+      margin-right: 20px
+      font-size: 12px
+      padding: 2px 0
+      color: #ffffff
+      cursor: pointer
+      opacity: 0.1
+      transition: 0.2s ease all
+
+      &:hover
+        opacity: 1
+        color: #de186c
+
+  &__error
+    color: #ffffff
+    border: 1px solid #de186c
+    padding: 12px
+    box-sizing: border-box
+    display: inline-block
+    font-size: 14px
+
+  &__answer
+    border-top: 1px solid #ffffff
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    position: relative
+
+    &:after
+      position: absolute
+      bottom: calc(100% + 1px)
+      left: 0
+      right: 0
+      width: 100%
+      height: 30px
+      background: rgb(33, 36, 48)
+      background: linear-gradient(180deg, rgba(33, 36, 48, 0) 0%, rgba(33, 36, 48, 1) 100%)
+      content: ''
+      display: block
+      z-index: 0
+
+    &-row
+      width: calc(100% - 120px)
+
+    &-textarea
+      background: transparent
+      border: 0
+      display: flex
+      min-height: 80px
+      width: 100%
+      resize: none
+      color: #ffffff
+      font-size: 14px
+      line-height: 1.5
+      padding: 12px
+      box-sizing: border-box
+      font-family: "Montserrat", sans-serif
+      outline: none
+      overflow: auto
+
+    &-actions
+      width: 120px
+
+    &-submit
+      width: 100%
+      height: 100%
+      border: 0
+      appearance: none
+      font-size: 14px
+      font-family: "Montserrat", sans-serif
+      background: #ffffff
+      outline: none
+      cursor: pointer
+
+
+.dialogs
+  width: 100%
+  background: #212430
+  margin: 0 10px 40px
+  max-height: 650px
+  border-radius: 8px
+  @media screen and (min-width: 768px)
+    width: calc(40% - 20px)
+
+  &__wrap
+    &-header
+      padding: 20px
+      box-sizing: border-box
+      font-size: 14px
+      color: #ffffff
+      text-transform: uppercase
+      border-bottom: 2px solid #de186c
+
+  &__item
+    position: relative
+
+    &-link
+      padding: 20px 24px
+      box-sizing: border-box
+      display: flex
+      flex-wrap: wrap
+      justify-content: flex-start
+      align-items: center
+      color: #ffffff
+      font-size: 14px
+      font-weight: 600
+
+      &:hover
+        background: #4c4e5d
+        color: #ffffff
+        cursor: pointer
+
+      &:not(:last-child)
+        border-bottom: 1px solid #333746
+
+      &.active
+        background: #393a49
+        color: #ffffff
+
+    &-delete
+      position: absolute
+      top: 16px
+      bottom: 16px
+      right: 8px
+      font-size: 10px
+      background: transparent
+      border: 1px solid #ffffff
+      color: #ffffff
+      opacity: 0.3
+      cursor: pointer
+      font-family: "Montserrat", sans-serif
+
+      &:hover
+        opacity: 1
+        background: #de186c
+        color: #ffffff
+        border-color: #de186c
+
+.plans
+  padding-top: 80px
+  padding-bottom: 120px
+
+  &__wrap
+    &:not(:last-child)
+      margin-bottom: 120px
+
+  &__info
+    margin-bottom: 40px
+
+    &-title
+      font-size: 24px
+      color: #ffffff
+      font-weight: 600
+      text-align: center
+
+  &__list
+    margin-left: -10px
+    margin-right: -10px
+    display: flex
+    flex-wrap: wrap
+
+.plan
+  background: #21242f
+  margin-left: 10px
+  margin-right: 10px
+  text-align: center
+  padding: 40px 24px
+  box-sizing: border-box
+  border-radius: 8px
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  width: 100%
+  margin-bottom: 40px
+  @media screen and (min-width: 768px)
+    width: calc(100% / 4 - 20px)
+
+  &__head
+    width: 100%
+
+  &__body
+    margin-top: 40px
+    margin-bottom: 60px
+    align-content: flex-start
+    @media screen and (min-width: 768px)
+      height: 55%
+
+  &__title
+    color: #ffffff
+    font-size: 24px
+    text-transform: uppercase
+    font-weight: 600
+
+  &__icon
+    margin-top: 16px
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    &-figure
+      height: 30px
+      margin: 0 4px
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+
+      & picture
+        height: 100%
+        display: block
+
+        & img
+          height: 100%
+          object-fit: cover
+          display: block
+
+  &__price
+    margin-top: 16px
+
+    &-value
+      font-size: 28px
+      color: #ffffff
+      font-family: "Helvetica", sans-serif
+
+    &-comment
+      font-size: 12px
+      color: #ffffff
+      opacity: 0.3
+
+  &__hl
+    color: #de186c
+    height: 80px
+    padding: 12px 0
+    box-sizing: border-box
+
+  &__list
+    &-item
+      color: #ffffff
+      font-size: 14px
+      opacity: 0.65
+
+      &:not(:last-child)
+        margin-bottom: 16px
+
+  &__actions
+    @media screen and (min-width: 768px)
+      margin-top: auto
+
+  &__action
+    background: #de186c
+    border-radius: 50px
+    padding: 12px 20px
+    box-sizing: border-box
+    color: #ffffff
+    font-family: "Montserrat", sans-serif
+    font-size: 12px
+    border: 0
+    cursor: pointer
+    outline: none
+    text-decoration: none
+    @media screen and (min-width: 1440px)
+      font-size: 14px
+
+    &-active
+      background: #ffffff
+      color: #000000
+      cursor: default
+
+.access
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  display: none
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  z-index: 100
+  padding: 20px
+
+  &.active
+    display: flex
+
+  &__wrap
+    width: 480px
+    padding: 40px
+    border-radius: 8px
+    background: #212430
+    z-index: 1
+    text-align: center
+
+  &__overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    display: block
+    background: rgba(0, 0, 0, 0.9)
+
+  &__title
+    color: #ffffff
+    font-size: 24px
+    font-weight: 600
+    @media screen and (min-width: 768px)
+      font-size: 28px
+
+  &__text
+    margin-top: 12px
+    color: #ffffff
+    opacity: 0.65
+    font-size: 14px
+    line-height: 1.5
+
+  &__actions
+    margin-top: 24px
+
+  &__action
+    background: #de186c
+    color: #ffffff
+    text-decoration: none
+    cursor: pointer
+    display: inline-flex
+    padding: 16px 24px
+    box-sizing: border-box
+    border-radius: 50px
+    font-size: 14px
+    @media screen and (min-width: 768px)
+      font-size: 16px
+      padding: 16px 40px
+
+  &__link
+    margin-top: 20px
+    &-action
+      font-size: 12px
+      display: inline-block
+      color: #ffffff
+      text-decoration: none
+      padding: 12px 28px
+      border: 1px solid #ffffff
+      border-radius: 50px
+      cursor: pointer
+
+.about
+  padding-top: 40px
+  padding-bottom: 120px
+  box-sizing: border-box
+  background: #131622
+  @media screen and (min-width: 768px)
+    padding-top: 120px
+
+  &:before
+    background: url("../assets/images/about.jpg") top center
+    background-size: cover
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    content: ''
+    display: block
+    @media screen and (min-width: 768px)
+      right: 320px
+    @media screen and (min-width: 1280px)
+      right: 480px
+    @media screen and (min-width: 1440px)
+      right: 540px
+
+  &:after
+    background: rgb(11, 13, 25)
+    background: linear-gradient(180deg, rgba(11, 13, 25, 1) 0%, rgba(19, 22, 34, 1) 100%)
+    position: absolute
+    top: 100%
+    right: 0
+    left: 0
+    height: 120px
+    content: ''
+    display: block
+    @media screen and (min-width: 768px)
+      right: 320px
+    @media screen and (min-width: 1280px)
+      right: 480px
+    @media screen and (min-width: 1440px)
+      right: 540px
+
+  &__wrap
+    @media screen and (min-width: 768px)
+      display: flex
+      flex-wrap: wrap
+      justify-content: flex-start
+      align-items: stretch
+
+  &__content
+    margin-bottom: 80px
+    @media screen and (min-width: 768px)
+      width: calc(100% - 320px)
+      padding-right: 80px
+      box-sizing: border-box
+    @media screen and (min-width: 1024px)
+      width: calc(100% - 320px)
+      padding-right: 80px
+      box-sizing: border-box
+
+    &-wrap
+      position: relative
+      z-index: 1
+
+    &-pre
+      color: #ffffff
+      font-size: 14px
+      margin-bottom: 8px
+
+    &-title
+      font-size: 28px
+      color: #ffffff
+      font-weight: 700
+      @media screen and (min-width: 1280px)
+        font-size: 36px
+      @media screen and (min-width: 1440px)
+        font-size: 48px
+        max-width: 580px
+
+      & .hl
+        color: #de186c
+
+    &-text
+      margin-top: 16px
+      font-size: 14px
+      opacity: 0.65
+      color: #ffffff
+      line-height: 1.5
+      max-width: 580px
+
+    &-tags
+      margin-top: 24px
+      max-width: 680px
+
+    &-tag
+      margin-right: 8px
+      margin-bottom: 8px
+      color: #ffffff
+      border: 1px solid #ffffff
+      border-radius: 50px
+      padding: 8px 12px
+      font-size: 12px
+      display: inline-flex
+      box-sizing: border-box
+      @media screen and (min-width: 1280px)
+        padding: 12px 32px
+
+    &-actions
+      margin-top: 32px
+
+    &-action
+      background: #de186c
+      color: #ffffff
+      border-radius: 50px
+      padding: 12px 28px
+      display: inline-flex
+      font-size: 14px
+      text-decoration: none
+      box-sizing: border-box
+      @media screen and (min-width: 1280px)
+        padding: 16px 40px
+
+    &-comment
+      font-size: 10px
+      color: #ffffff
+      opacity: 0.3
+      line-height: 1.5
+      margin-top: 24px
+      max-width: 580px
+      @media screen and (min-width: 768px)
+        font-size: 12px
+        margin-top: 40px
+
+  &__partners
+    @media screen and (min-width: 768px)
+      width: 320px
+      padding-left: 60px
+      box-sizing: border-box
+      position: relative
+      z-index: 1
+    @media screen and (min-width: 1024px)
+      width: 320px
+      padding-left: 60px
+      box-sizing: border-box
+      position: relative
+      z-index: 1
+
+    &:before
+      @media screen and (min-width: 768px)
+        position: absolute
+        top: -320px
+        left: 0
+        content: ""
+        display: block
+        background: #131622
+        right: 0
+        bottom: 0
+        z-index: 0
+        width: 400%
+        margin-bottom: -200px
+
+    &-content
+      position: relative
+      z-index: 1
+
+    &-title
+      font-size: 28px
+      color: #ffffff
+      font-weight: 700
+      margin-bottom: 24px
+
+.partners
+  &__item
+    &:not(:last-child)
+      margin-bottom: 40px
+
+    &-title
+      color: #ffffff
+      font-size: 14px
+      font-weight: 600
+
+    &-text
+      color: #ffffff
+      font-size: 12px
+      line-height: 1.5
+      margin-top: 8px
+      opacity: 0.65
+
+    &-actions
+      margin-top: 16px
+
+    &-action
+      background: #2b2d3a
+      color: #ffffff
+      font-size: 12px
+      padding: 8px 16px
+      display: inline-flex
+      border-radius: 50px
+      box-sizing: border-box
+      @media screen and (min-width: 768px)
+        padding: 12px 24px
+
+  &__block
+    margin-top: 80px
+    padding: 36px
+    background: #2b2e39
+    border-radius: 8px
+
+    &-title
+      font-weight: 600
+      color: #ffffff
+      font-size: 20px
+
+    &-text
+      color: #ffffff
+      font-size: 14px
+      opacity: 0.65
+      margin-top: 8px
+
+    &-actions
+      margin-top: 24px
+
+    &-action
+      background: #de186c
+      padding: 12px 24px
+      box-sizing: border-box
+      display: inline-flex
+      color: #ffffff
+      border-radius: 50px
+      font-size: 14px
+      text-decoration: none
+
+
+.info
+  padding-top: 40px
+  padding-bottom: 80px
+  @media screen and (min-width: 1024px)
+    padding-top: 80px
+    padding-bottom: 120px
+
+  &__wrap
+    max-width: 660px
+    margin: 0 auto
+
+  &__pagetitle
+    color: #ffffff
+    font-weight: 600
+    font-size: 28px
+    margin-bottom: 40px
+    @media screen and (min-width: 1024px)
+      font-size: 36px
+      margin-bottom: 80px
+
+  &__title
+    color: #ffffff
+    font-weight: 600
+    font-size: 20px
+    @media screen and (min-width: 1024px)
+      font-size: 24px
+      margin-bottom: 40px
+
+  &__text
+    color: #ffffff
+    font-size: 14px
+    @media screen and (min-width: 1024px)
+      font-size: 16px
+
+    &:not(:last-child)
+      margin-bottom: 8px
+      @media screen and (min-width: 1024px)
+        margin-bottom: 20px
+
+.policy
+  padding-top: 40px
+  padding-bottom: 80px
+  @media screen and (min-width: 1024px)
+    padding-top: 80px
+    padding-bottom: 120px
+
+  &__wrap
+    max-width: 660px
+    margin: 0 auto
+
+  &__pagetitle
+    color: #ffffff
+    font-weight: 600
+    font-size: 28px
+    margin-bottom: 40px
+    @media screen and (min-width: 1024px)
+      font-size: 36px
+      margin-bottom: 80px
+
+  &__title
+    color: #ffffff
+    font-weight: 600
+    font-size: 20px
+    margin-bottom: 24px
+    @media screen and (min-width: 1024px)
+      font-size: 24px
+      margin-bottom: 40px
+
+  &__section
+    &:not(:last-child)
+      margin-bottom: 60px
+      @media screen and (min-width: 1024px)
+        margin-bottom: 120px
+
+  &__content
+    & h3
+      color: #ffffff
+      font-weight: 600
+      opacity: 0.65
+
+    & p
+      color: #ffffff
+      font-size: 14px
+      line-height: 2
+      opacity: 0.65
+      @media screen and (min-width: 1024px)
+        font-size: 16px
+
+      &:not(:last-child)
+        margin-bottom: 16px
+        @media screen and (min-width: 1024px)
+          margin-bottom: 28px
+
+    & ul
+      margin-bottom: 60px
+
+      & li
+        color: #ffffff
+        opacity: 0.65
+
+        &:not(:last-child)
+          margin-bottom: 16px
+          line-height: 2
+
+
+.menu
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 1000
+  padding: 20px
+  box-sizing: border-box
+  background: rgb(22, 23, 54)
+  display: none
+
+  &.active
+    display: block
+
+  &__head
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+
+  &__content
+    padding: 40px 0
+    margin-top: 40px
+    border-top: 1px solid #333746
+
+  &__list
+    padding-left: 24px
+    box-sizing: border-box
+
+    &-item
+      font-weight: 600
+      text-transform: uppercase
+      letter-spacing: 0.5px
+      font-size: 20px
+
+      &:not(:last-child)
+        margin-bottom: 40px
+
+    &-link
+      color: #ffffff
+      text-decoration: none
+
+  &__personal
+    box-sizing: border-box
+    padding: 40px 0
+    border-top: 1px solid #333746
+
+    &-list
+      padding-left: 24px
+      box-sizing: border-box
+
+    &-item
+      &:not(:last-child)
+        margin-bottom: 24px
+
+    &-link
+      color: #ffffff
+      font-size: 16px
+      display: inline-block
+      text-decoration: none
+
+    &-logout
+      display: inline-flex
+      border: 0
+      background: #292b42
+      color: #ffffff
+      padding: 12px 24px
+      opacity: 0.65
+      border-radius: 4px
+      outline: none
+      cursor: pointer
+
+  &__alt
+    box-sizing: border-box
+    padding: 40px 0
+    border-top: 1px solid #333746
+
+    &-list
+      padding-left: 24px
+      box-sizing: border-box
+
+    &-item
+      &:not(:last-child)
+        margin-bottom: 16px
+
+    &-link
+      font-size: 12px
+      opacity: 0.3
+      display: inline-block
+      color: #ffffff
+
+.empty
+  &__title
+    color: #ffffff
+    font-weight: 600
+    font-size: 24px
+
+  &__text
+    color: #ffffff
+    font-size: 14px
+    opacity: 0.65
+    margin-top: 12px
+
+.articles
+  padding-bottom: 200px
+  @media screen and (min-width: 1280px)
+    padding-left: 120px
+
+
+  &__list
+    max-width: 1080px
+
+  &__item
+    display: flex
+    flex-wrap: wrap
+    padding: 40px
+    border-radius: 8px
+    box-sizing: border-box
+    background: #21242f
+
+    &:not(:last-child)
+      margin-bottom: 80px
+      border-bottom: 1px solid #4c4e5d
+
+    &-image
+      margin: 0
+      width: 180px
+      margin-bottom: 24px
+
+      @media screen and (min-width: 768px)
+        margin-bottom: 0
+
+      & picture
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        width: 100%
+        padding-top: 100%
+        background-color: #212430
+        position: relative
+        box-sizing: border-box
+        border-radius: 4px
+        overflow: hidden
+
+        & img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 1
+
+    &-info
+      box-sizing: border-box
+      margin-top: 20px
+      @media screen and (min-width: 768px)
+        width: calc(100% - 180px)
+        padding-left: 40px
+
+    &-title
+      color: #ffffff
+
+    &-text
+      color: #ffffff
+      opacity: 0.65
+      line-height: 1.5
+      margin-top: 20px
+      font-size: 14px
+      margin-bottom: 16px
+
+    &-action
+      appearance: none
+      background: #de186c
+      color: #ffffff
+      border-radius: 50px
+      border: 0
+      padding: 8px 20px
+      font-size: 16px
+
+    &--center
+      align-items: center
+
+      & .articles__item-info
+        margin-top: 0
+
+  &__actions
+    margin-bottom: 60px
+    &-new
+      border: 1px solid #de186c
+      padding: 14px 28px
+      border-radius: 50px
+      color: #ffffff
+      font-family: "Montserrat", sans-serif
+      background: transparent
+      text-decoration: none
+
+  &__form
+    display: block
+    width: 100%
+    max-width: 480px
+
+    & textarea
+      width: 100%
+      background: #292b42
+      border: 1px solid #4c4e5d
+      border-radius: 4px
+      padding: 12px 20px
+      font-family: "Montserrat", sans-serif
+      color: #ffffff
+      resize: vertical
+      max-height: 360px
+      min-height: 120px
+      box-sizing: border-box
+
+    &-submit
+      margin-top: 12px
+      background: #de186c
+      border-radius: 50px
+      padding: 12px 24px
+      color: #ffffff
+      border: none
+      font-family: "Montserrat", sans-serif
+
+.article__answer
+  width: 100%
+  max-width: 480px
+
+  &-textarea
+    width: 100%
+    background: #292b42
+    border: 1px solid #4c4e5d
+    border-radius: 4px
+    padding: 12px 20px
+    font-family: "Montserrat", sans-serif
+    color: #ffffff
+    resize: vertical
+    max-height: 360px
+    min-height: 120px
+    box-sizing: border-box
+
+  &-submit
+    background: #de186c
+    border-radius: 50px
+    padding: 12px 24px
+    color: #ffffff
+    border: none
+    font-family: "Montserrat", sans-serif
+    margin-top: 16px

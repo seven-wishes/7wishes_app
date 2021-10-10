@@ -1,0 +1,53 @@
+# BACKEND
+# OS X
+*.DS_Store*
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+# IntelliJ
+*.idea/
+/7-wishes.iml
+/seven-wishes.iml
+
+# npm
+*node_modules
+*package-lock.json
+*.log
+*.gz
+
+
+# Coveralls
+coverage
+
+# Benchmarking
+benchmarks/graphs
+
+# FRONTEND
+/frontend/.pnp
+/frontend/.pnp.js
+
+# testing
+/frontend/coverage
+
+# production
+/frontend/build
+/frontend/public/uploads/
+
+# misc
+/frontend/.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
