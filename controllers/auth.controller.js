@@ -141,8 +141,8 @@ class AuthController {
                     port: 465,
                     secure: true,
                     auth: {
-                        user: "seven-wishes.ru@yandex.ru", // TODO перенести в env
-                        pass: "a1s2d3", // TODO перенести в env
+                        user: "hello@7-wishes.ru", // TODO перенести в env
+                        pass: "naev3uMe4", // TODO перенести в env
                     },
                 });
 
