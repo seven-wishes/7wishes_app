@@ -147,7 +147,7 @@ class AuthController {
                 });
 
                 let info = await transporter.sendMail({
-                    from: '"7 желаний. Сервис выгодных знакомств." <seven-wishes.ru@yandex.ru>',
+                    from: '"7 желаний. Сервис выгодных знакомств." <hello@7-wishes.ru>',
                     to: email,
                     subject: "Восстановление пароля",
                     text: `Ваш новый пароль: <b>${new_password}</b>. Используйте его для входа в личный кабинет.`,
