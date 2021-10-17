@@ -48,7 +48,7 @@ const Profile = (props) => {
                         <div className="profile__aside-block">
                             <div className="profile__plans">
                                 <div className="profile__plans-title">Мой тариф</div>
-                                <div className="profile__plans-name">{props.plan_title}</div>
+                                <div className="profile__plans-name">{new Date(props.account.actual_date).getTime() > Date.now() ? props.plan_title : 'Базовый'}</div>
                                 <div className="profile__messages-actions">
                                     <NavLink to="/plans" className="profile__messages-action">Сменить тариф</NavLink>
                                     <button className="profile__messages-action profile__messages-action--transparent" onClick={onPayHandler}>Поднять страницу</button>
