@@ -138,8 +138,8 @@ class AuthController {
 
                 let transporter = nodemailer.createTransport({
                     host: "smtp.yandex.ru",
-                    port: 587,
-                    secure: false,
+                    port: 465,
+                    secure: true,
                     auth: {
                         user: "seven-wishes.ru@yandex.ru", // TODO перенести в env
                         pass: "a1s2d3", // TODO перенести в env
