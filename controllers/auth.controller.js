@@ -134,38 +134,31 @@ class AuthController {
             await db.query("UPDATE users SET hash = $1 WHERE login = $2 RETURNING *", [hash, email.toLowerCase()]);
 
             async function main() {
-                // Generate test SMTP service account from ethereal.email
-                // Only needed if you don't have a real mail account for testing
                 let testAccount = await nodemailer.createTestAccount();
 
-                // create reusable transporter object using the default SMTP transport
                 let transporter = nodemailer.createTransport({
                     host: "smtp.yandex.ru",
                     port: 587,
-                    secure: false, // true for 465, false for other ports
+                    secure: false,
                     auth: {
-                        user: "info@7wishes.club", // generated ethereal user
-                        pass: "a1s2d3", // generated ethereal password
+                        user: "seven-wishes@yandex.ru", // TODO перенести в env
+                        pass: "a1s2d3", // TODO перенести в env
                     },
                 });
 
-                // send mail with defined transport object
                 let info = await transporter.sendMail({
-                    from: '"7 желаний. Сервис выгодных знакомств." <info@7wishes.club>', // sender address
-                    to: email, // list of receivers
-                    subject: "Восстановление пароля", // Subject line
-                    text: `Ваш новый пароль: <b>${new_password}</b>. Используйте его для входа в личный кабинет.`, // plain text body
-                    html: `Ваш новый пароль: <b>${new_password}</b>. Используйте его для входа в личный кабинет.`, // html body
+                    from: '"7 желаний. Сервис выгодных знакомств." <seven-wishes@yandex.ru>',
+                    to: email,
+                    subject: "Восстановление пароля",
+                    text: `Ваш новый пароль: <b>${new_password}</b>. Используйте его для входа в личный кабинет.`,
+                    html: `Ваш новый пароль: <b>${new_password}</b>. Используйте его для входа в личный кабинет.`,
                 });
 
                 console.log("Message sent: %s", info.messageId);
-                // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
                 console.log('New password', new_password);
 
-                // Preview only available when sending through an Ethereal account
                 console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-                // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
             }
 
             main().catch(console.error);
