@@ -141,13 +141,13 @@ class AuthController {
                     port: 587,
                     secure: false,
                     auth: {
-                        user: "seven-wishes@yandex.ru", // TODO перенести в env
+                        user: "seven-wishes.ru@yandex.ru", // TODO перенести в env
                         pass: "a1s2d3", // TODO перенести в env
                     },
                 });
 
                 let info = await transporter.sendMail({
-                    from: '"7 желаний. Сервис выгодных знакомств." <seven-wishes@yandex.ru>',
+                    from: '"7 желаний. Сервис выгодных знакомств." <seven-wishes.ru@yandex.ru>',
                     to: email,
                     subject: "Восстановление пароля",
                     text: `Ваш новый пароль: <b>${new_password}</b>. Используйте его для входа в личный кабинет.`,
